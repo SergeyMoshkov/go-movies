@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
 import Home from './components/Home';
 import Movies from './components/Movies';
