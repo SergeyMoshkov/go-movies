@@ -26,12 +26,9 @@ export default function App() {
             </div>
             <div className="col-md-10">
               <Routes>
-                <Route path="/movies" element={<Movies />}>
-                </Route>
-                <Route path="/admin" element={<Admin />}>
-                </Route>
-                <Route path="/" element={<Home />}>
-                </Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/movies" element={<Movies />} />
+                <Route path="/admin" element={<Admin />} />
               </Routes>
             </div>
           </div>
