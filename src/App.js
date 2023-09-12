@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from './components/Home';
 import Movies from './components/Movies';
+import Admin from './components/Admin';
 
 export default function App() {
   return (
@@ -37,12 +39,4 @@ export default function App() {
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Admin() {
-  return <h2>Admin</h2>;
 }
