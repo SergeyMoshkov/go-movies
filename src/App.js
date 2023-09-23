@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useResolvedPath, Link, useParams } from "react-router-dom";
 import Home from './components/Home';
 import Movies from './components/Movies';
 import Admin from './components/Admin';
 import Contacts from './components/Contacts';
-// import { render } from 'react-dom';
 
 export default function App() {
   return (
@@ -21,13 +20,16 @@ export default function App() {
                     <Link to="/">Home</Link>
                   </li>
                   <li className="list-group-item">
-                    <Link to="/movies">Movies</Link>
+                    <Link to="movies">Movies</Link>
                   </li>
                   <li className="list-group-item">
-                    <Link to="/admin">Admin</Link>
+                    <Link to="by-category">Categories</Link>
                   </li>
                   <li className="list-group-item">
-                    <Link to="/contacts">Contacts</Link>
+                    <Link to="admin">Admin</Link>
+                  </li>
+                  <li className="list-group-item">
+                    <Link to="contacts">Contacts</Link>
                   </li>
                 </ul>
               </nav>
@@ -35,10 +37,11 @@ export default function App() {
             <div className="col-md-10">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/movies" element={<Movies />} />
-                <Route path="/movies/:id" element={<Movie />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/contacts" element={<Contacts />} />
+                <Route path="movies/:id" element={<Movie />} />
+                <Route path="movies" element={<Movies />} />
+                <Route path="by-category" element={<CategoryPage />} />
+                <Route path="admin" element={<Admin />} />
+                <Route path="contacts" element={<Contacts />} />
               </Routes>
             </div>
           </div>
@@ -53,4 +56,23 @@ function Movie() {
   return (
     <h2>Movie id {id}</h2>
   )
+}
+
+function CategoryPage() {
+
+  const path = useResolvedPath("").pathname;
+  return (
+    <div>
+      <h2>Categories</h2>
+
+      <ul>
+        <li>
+          <Link to={`${path}/drama`}>Drama</Link>
+        </li>
+        <li>
+          <Link to={`${path}/comedy`}>Comedy</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
