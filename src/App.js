@@ -42,7 +42,7 @@ export default function App() {
                 <Route path="movies" element={<Movies />} />
                 <Route path="by-category" element={<CategoryPage />} />
                 <Route path="by-category/drama"
-                element={<Categories title={`Drama`}/>} />
+                  element={<Categories title={`Drama`} />} />
                 <Route path="admin" element={<Admin />} />
                 <Route path="contacts" element={<Contacts />} />
               </Routes>
@@ -79,3 +79,6 @@ function CategoryPage() {
     </div>
   );
 }
+
+// <Route path="by-category/drama"
+// render={(props) => <Categories {...props} title={`Drama`}/>} />
