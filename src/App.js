@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Movies from './components/Movies';
 import Admin from './components/Admin';
 import Contacts from './components/Contacts';
+import Categories from './components/Categories';
 
 export default function App() {
   return (
@@ -40,6 +41,8 @@ export default function App() {
                 <Route path="movies/:id" element={<Movie />} />
                 <Route path="movies" element={<Movies />} />
                 <Route path="by-category" element={<CategoryPage />} />
+                <Route path="by-category/drama"
+                element={<Categories title={`Drama`}/>} />
                 <Route path="admin" element={<Admin />} />
                 <Route path="contacts" element={<Contacts />} />
               </Routes>
