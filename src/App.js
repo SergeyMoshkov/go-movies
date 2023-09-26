@@ -43,6 +43,8 @@ export default function App() {
                 <Route path="by-category" element={<CategoryPage />} />
                 <Route path="by-category/drama"
                   element={<Categories title={`Drama`} />} />
+                  <Route path="by-category/comedy"
+                  element={<Categories title={`Comedy`} />} />
                 <Route path="admin" element={<Admin />} />
                 <Route path="contacts" element={<Contacts />} />
               </Routes>
